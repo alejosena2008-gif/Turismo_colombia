@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TurismoCol — Destinos sin Visa para Colombianos</title>
+</head>
+<body>
+    <h1>TurismoCol</h1>
+    <form method="GET" action="">
+        <input type="text" name="q" value="{{ query }}" placeholder="Busca por país o región...">
+        <button type="submit">Buscar</button>
+    </form>
+    <p>Destinos disponibles: {{ total }}</p>
+    {% if destinos %}
+        {% for d in destinos %}
+            <div>
+                <h3>{{ d.pais }}</h3>
+                <p>Región: {{ d.region }} | Estadía: {{ d.dias }}</p>
+                <p>{{ d.observaciones }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No se encontraron destinos para "{{ query }}"</p>
+    {% endif %}
+</body>
+</html>
