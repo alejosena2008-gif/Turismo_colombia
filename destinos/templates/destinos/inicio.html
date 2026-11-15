@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turismo Colombia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #f4f6f8;
+            color: #263238;
+        }
+
+        h1 {
+            color: #176b45;
+        }
+
+        form {
+            display: flex;
+            gap: 10px;
+            margin: 25px 0;
+        }
+
+        input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        button {
+            padding: 12px 20px;
+            background: #176b45;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .destino, .mensaje {
+            background: white;
+            padding: 18px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .mensaje {
+            border-left: 5px solid #d99b28;
+        }
+
+        .error {
+            border-left-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Turismo Colombia</h1>
+    <p>Consulta los destinos que no exigen visa de turismo a ciudadanos colombianos.</p>
+
+    <form method="get">
+        <input
+            type="text"
+            name="q"
+            placeholder="Buscar por país o región..."
+            value="{{ termino }}"
+        >
+        <button type="submit">Buscar</button>
+    </form>
+
+    {% if error %}
+        <div class="mensaje error">
+            {{ error }}
+        </div>
+
+    {% elif destinos %}
+        <h2>Destinos disponibles</h2>
+
+        {% for destino in destinos %}
+            <div class="destino">
+                <h3>{{ destino.pais|default:"País no disponible" }}</h3>
+
+                <p>
+                    <strong>Región:</strong>
+                    {{ destino.region|default:"No especificada" }}
+                </p>
+
+                <p>
+                    <strong>Días de estadía:</strong>
+                    {{ destino.dias_estadia|default:"Consultar en consulado" }}
+                </p>
+
+                <p>
+                    <strong>Observaciones:</strong>
+                    {{ destino.observaciones|default:"Sin observaciones adicionales" }}
+                </p>
+            </div>
+        {% endfor %}
+
+    {% elif termino %}
+        <div class="mensaje">
+            <h2>No se encontraron destinos para "{{ termino }}"</h2>
+            <p>Te recomendamos:</p>
+            <ul>
+                <li>Verificar la escritura del país o región.</li>
+                <li>Intentar con un nombre más corto.</li>
+                <li>Buscar utilizando el nombre de otra región.</li>
+            </ul>
+        </div>
+
+    {% else %}
+        <div class="mensaje">
+            <p>No hay destinos disponibles para mostrar en este momento.</p>
+        </div>
+    {% endif %}
+
+    <footer>
+        <p>Importante: verifica siempre las condiciones de ingreso con el consulado correspondiente.</p>
+    </footer>
+
+</body>
+</html>
