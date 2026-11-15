@@ -1,0 +1,21 @@
+PAIS,REGION,DIAS_PERMITIDOS,OBSERVACIONES
+Argentina,América del Sur,90 días,Ingreso con cédula de ciudadanía o pasaporte
+Brasil,América del Sur,90 días,Ingreso con cédula de ciudadanía o pasaporte
+Chile,América del Sur,90 días,Ingreso con cédula de ciudadanía o pasaporte
+Perú,América del Sur,90 días,Ingreso con cédula de ciudadanía o pasaporte
+Ecuador,América del Sur,90 días,Ingreso con cédula de ciudadanía o pasaporte
+México,América del Norte,180 días,Requiere pre-registro electrónico migratorio
+Alemania,Europa (Espacio Schengen),90 días,Estadía máxima de 90 días dentro de 180 días
+España,Europa (Espacio Schengen),90 días,Estadía máxima de 90 días dentro de 180 días
+Francia,Europa (Espacio Schengen),90 días,Estadía máxima de 90 días dentro de 180 días
+Italia,Europa (Espacio Schengen),90 días,Estadía máxima de 90 días dentro de 180 días
+Países Bajos,Europa (Espacio Schengen),90 días,Estadía máxima de 90 días dentro de 180 días
+Reino Unido,Europa,180 días,Exención de visa de turismo hasta 6 meses
+Turquía,Europa / Asia,90 días,Exención de visa para turismo
+Corea del Sur,Asia,90 días,Requiere autorización K-ETA antes de viajar
+Filipinas,Asia,30 días,Exención de visa para turismo
+Israel,Medio Oriente,90 días,Sello en pasaporte o tarjeta electrónica
+Marruecos,África,90 días,Exención de visa para turismo
+República Dominicana,Caribe,30 días,Requiere tarjeta de turista incluida en boleto
+Panamá,América Central,90 días,Solvencia económica requerida en ingreso
+Rusia,Europa / Asia,90 días,Hasta 90 días cada 180 días
